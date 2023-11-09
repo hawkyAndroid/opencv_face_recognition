@@ -1,0 +1,63 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+}
+
+android {
+    // 改为 'org.opencv'，避免导入opencv报错（BuildConfig、R）
+    namespace 'org.opencv'
+
+    // 编译目标 SDK 版本
+    compileSdk project.ext.compileSdk
+
+    defaultConfig {
+        // 应用程序所能运行的最低 Android SDK 版本
+        minSdk project.ext.minSdk
+        // 应用程序将适配 Android 33 设备的目标 SDK 版本
+        targetSdk project.ext.targetSdk
+
+        // 包含哪些 CPU 结构的安卓设备（本地库默认路径：src/main/jniLibs）
+        // Gradle 将根据 ndk.abiFilters 中指定的 ABI 架构自动选择合适的库文件，然后将其复制到 APK 中。
+        ndk.abiFilters 'arm64-v8a', 'armeabi-v7a'
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+
+        debug {
+            minifyEnabled false
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    // 通过将 AIDL 文件的源代码目录指定为 src\\main\\aidl，Gradle 构建系统会查找该目录中的 AIDL 文件，并将其编译为 Java 文件。
+    sourceSets {
+        main {
+            aidl {
+                srcDirs 'src\\main\\aidl'
+            }
+        }
+    }
+
+    // 启用 AIDL 文件的编译功能
+    buildFeatures {
+        aidl true
+    }
+}
+
+dependencies {
+    // 在 Kotlin 代码中使用更简洁的语法来操作 AndroidX Core 组件。
+    implementation "androidx.core:core-ktx:1.8.0"
+    implementation 'androidx.appcompat:appcompat:1.5.1'
+    implementation 'com.google.android.material:material:1.7.0'
+}

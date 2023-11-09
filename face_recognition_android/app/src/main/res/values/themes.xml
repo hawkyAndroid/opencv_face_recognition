@@ -1,0 +1,56 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="Theme.FaceRecognition" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/purple_500</item>
+        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Customize your theme here. -->
+        <item name="materialButtonStyle">@style/materialButton</item>
+        <item name="android:windowContentTransitions">true</item>
+        <item name="android:windowActivityTransitions">true</item>
+        <item name="android:windowAllowEnterTransitionOverlap">false</item>
+        <item name="android:windowAllowReturnTransitionOverlap">false</item>
+    </style>
+
+    <style name="launcher" parent="Theme.FaceRecognition">
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowBackground">@drawable/splash</item>
+    </style>
+
+    <style name="materialButton" parent="Widget.MaterialComponents.Button">
+        <item name="android:paddingLeft">8dp</item>
+        <item name="android:paddingRight">8dp</item>
+        <item name="android:paddingTop">4dp</item>
+        <item name="android:paddingBottom">4dp</item>
+        <item name="android:inset">0dp</item>
+        <item name="android:insetLeft">0dp</item>
+        <item name="android:insetRight">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:minWidth">0dp</item>
+        <item name="android:minHeight">0dp</item>
+        <item name="android:elevation">0dp</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <!-- Loading Dialog theme. -->
+    <style name="theme_dialog_loading" parent="android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:backgroundDimAmount">0.5</item>
+    </style>
+
+    <!-- Common ProgressBar Theme -->
+    <style name="theme_progressbar_common">
+        <item name="android:indeterminateDrawable">@drawable/rotate_loading_icon</item>
+        <item name="android:indeterminateDuration">1500</item>
+        <item name="android:minWidth">50dip</item>
+        <item name="android:maxWidth">50dip</item>
+        <item name="android:minHeight">50dip</item>
+        <item name="android:maxHeight">50dip</item>
+    </style>
+</resources>

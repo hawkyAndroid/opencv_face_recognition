@@ -1,0 +1,8 @@
+<resources>
+
+    <string name="app_name">人脸识别</string>
+    <string name="fr_way_album">相册</string>
+    <string name="fr_way_camera">相机</string>
+    <string name="label_start_detect">开始检测</string>
+    <string name="fr_init_failed">由于OpenCV初始化失败，无法执行人脸识别.</string>
+</resources>
